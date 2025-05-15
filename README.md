@@ -3,7 +3,7 @@
 This is a web-based calculator built as part of my internship at Micro IT India. The calculator performs basic arithmetic operations with a clean, nature-inspired design, featuring a semi-transparent overlay for readability and a modern user interface. This project demonstrates my skills in frontend development, focusing on DOM manipulation, event handling, responsive design, and Firebase integration for analytics tracking.
 🔗 Live Demo: https://calculator-e04b2.web.app/
 
-## 📸 Screenshots
+## 📸 Screenshot of the Site:
 ![Screenshot 2025-05-15 085456](https://github.com/user-attachments/assets/aa638956-0355-46eb-90b5-4b5fe422f72c)
 
 ## ✨ Features

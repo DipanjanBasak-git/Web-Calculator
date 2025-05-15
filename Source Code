@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Project</title>
+    <!-- Firebase SDK Integration -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyC2tYY-_jp8xgBCnYJNaQHVH24NPdemBeU",
+            authDomain: "calculator-e04b2.firebaseapp.com",
+            projectId: "calculator-e04b2",
+            storageBucket: "calculator-e04b2.firebasestorage.app",
+            messagingSenderId: "132819258209",
+            appId: "1:132819258209:web:85767e768cdd844bd3d320",
+            measurementId: "G-53H9TFYCCP"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80'); /* Nature background */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+
+        /* Semi-transparent overlay for readability */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+            z-index: 1;
+        }
+
+        /* Ensure content is above overlay */
+        h1, .calculator, .creator {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Title above calculator */
+        h1 {
+            font-size: 26px;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        /* Calculator container */
+        .calculator {
+            background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+            border-radius: 12px;
+            padding: 20px;
+            width: 320px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        /* Display input field */
+        #display {
+            width: 100%;
+            height: 45px;
+            font-size: 22px;
+            text-align: right;
+            padding: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: #f8f8f8;
+            box-sizing: border-box;
+        }
+
+        /* Button grid */
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+
+        /* Button styling */
+        button {
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 6px;
+            background-color: #e8ecef;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        /* Hover and active effects */
+        button:hover {
+            background-color: #d5dade;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        /* Operator buttons */
+        .operator {
+            background-color: #26A69A;
+            color: white;
+        }
+
+        .operator:hover {
+            background-color: #00897B;
+        }
+
+        /* Clear button */
+        .clear {
+            background-color: #EF5350;
+            color: white;
+        }
+
+        .clear:hover {
+            background-color: #D81B60;
+        }
+
+        /* Equals button */
+        .equals {
+            background-color: #FF7043;
+            color: white;
+        }
+
+        .equals:hover {
+            background-color: #F4511E;
+        }
+
+        /* Footer with creator name */
+        .creator {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #fff;
+            font-style: italic;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive design */
+        @media (max-width: 360px) {
+            .calculator {
+                width: 90%;
+            }
+
+            button {
+                padding: 12px;
+                font-size: 16px;
+            }
+
+            #display {
+                font-size: 20px;
+                height: 40px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Calculator project by Dipanjan Basak -->
+    <h1>Calculator</h1>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('/')">/</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('*')">*</button>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button class="equals" onclick="calculate()">=</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+        </div>
+    </div>
+    <div class="creator">Created by Dipanjan Basak</div>
+    <script>
+        // Get display element
+        var display = document.getElementById('display');
+
+        // Add value to display
+        function appendToDisplay(value) {
+            display.value = display.value + value;
+        }
+
+        // Clear the display
+        function clearDisplay() {
+            display.value = "";
+        }
+
+        // Calculate result
+        function calculate() {
+            try {
+                if (display.value != "") {
+                    var result = eval(display.value);
+                    display.value = result || "";
+                }
+            } catch (error) {
+                display.value = "Error";
+                setTimeout(function() {
+                    clearDisplay();
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>

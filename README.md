@@ -2,6 +2,10 @@
 ## 📋 Overview
 This is a web-based calculator built as part of my internship at Micro IT India. The calculator performs basic arithmetic operations with a clean, nature-inspired design, featuring a semi-transparent overlay for readability and a modern user interface. This project demonstrates my skills in frontend development, focusing on DOM manipulation, event handling, responsive design, and Firebase integration for analytics tracking.
 🔗 Live Demo: https://calculator-e04b2.web.app/
+
+## 📸 Screenshots
+![Screenshot 2025-05-15 085456](https://github.com/user-attachments/assets/aa638956-0355-46eb-90b5-4b5fe422f72c)
+
 ## ✨ Features
 
 ➕ Basic Arithmetic Operations: Supports addition, subtraction, multiplication, and division.
@@ -71,9 +75,7 @@ Press the = button to compute and display the result.
 Click the C button to clear the display and start a new calculation.
 If an error occurs (e.g., invalid expression), the display shows "Error" and auto-clears after 1 second.
 
-## 📸 Screenshots
-Add screenshots of your calculator here to showcase the UI. For example, you can take a screenshot of the calculator in both desktop and mobile views and upload them to the repository.
-🙏 Credits
+## 🙏 Credits
 
 Internship: This project was developed during my internship at Micro IT India.
 Background Image: Nature background sourced from Unsplash.

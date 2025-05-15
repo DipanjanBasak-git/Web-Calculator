@@ -1,6 +1,7 @@
 # 🧮 Calculator Project
 ## 📋 Overview
 This is a web-based calculator built as part of my internship at Micro IT India. The calculator performs basic arithmetic operations with a clean, nature-inspired design, featuring a semi-transparent overlay for readability and a modern user interface. This project demonstrates my skills in frontend development, focusing on DOM manipulation, event handling, responsive design, and Firebase integration for analytics tracking.
+
 🔗 Live Demo: https://calculator-e04b2.web.app/
 
 ## 📸 Screenshot of the Site:
@@ -9,11 +10,17 @@ This is a web-based calculator built as part of my internship at Micro IT India.
 ## ✨ Features
 
 ➕ Basic Arithmetic Operations: Supports addition, subtraction, multiplication, and division.
+
 🗑️ Clear Button: Resets the calculator to start a new calculation with a single click.
+
 🎨 Nature-Inspired Design: Features a background image from Unsplash with a semi-transparent overlay for enhanced readability.
+
 🌟 Interactive UI: Buttons with hover and active effects, color-coded for operators, clear, and equals functions.
+
 📱 Responsive Design: Adapts seamlessly to different screen sizes, ensuring usability on both desktop and mobile devices.
+
 🖼️ Fade-In Animation: Calculator container fades in on page load for a polished user experience.
+
 📊 Firebase Analytics: Tracks user interactions using Firebase Analytics for insights into usage patterns.
 
 ## 🛠️ Tech Stack
